@@ -1,5 +1,16 @@
 Rails.application.routes.draw do
-  devise_for :users
+  # devise_for :users
+
+  namespace :api, path: '/', defaults: {format: 'json'} do
+    api_version(module: "V1", header: {name: "Accept", value: "application/vnd.todait.v1+json"}, default: true) do
+      devise_scope :user do
+        post 'registrations'  => 'registrations#create', as: 'register'
+        post 'sessions' => 'sessions#create', as: 'login'
+        delete 'sessions' => 'sessions#destroy', as: 'logout'
+      end
+    end
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

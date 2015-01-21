@@ -35,7 +35,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'simple_token_authentication', '~> 1.0'
 
+# api versioning
+gem 'versionist'
+
 group :development, :test do
+  gem 'thin'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 
@@ -52,7 +56,7 @@ group :development, :test do
   gem 'guard-rspec'
   gem 'rb-fsevent' if `uname` =~ /Darwin/
 
-  gem 'annotation'
+  gem 'annotate'
 end
 
 group :test do

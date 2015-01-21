@@ -24,6 +24,9 @@ require 'rspec/rails'
 # If you are not using ActiveRecord, you can remove this line.
 ActiveRecord::Migration.maintain_test_schema!
 
+V1_ACCEPT = 'application/vnd.todait.v1+json'
+V2_ACCEPT = 'application/vnd.todait.v2+json'
+
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
